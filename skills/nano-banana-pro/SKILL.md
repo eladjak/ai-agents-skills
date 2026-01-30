@@ -1,4 +1,4 @@
----
+﻿---
 name: nano-banana-pro
 description: Generate images with Google's Nano Banana Pro (Gemini 3 Pro Image). Use when generating AI images via Gemini API, creating professional visuals, or building image generation features. Triggers on Nano Banana Pro, Gemini 3 Pro Image, gemini-3-pro-image-preview, Google image generation.
 ---
@@ -245,3 +245,4 @@ export async function POST(request: NextRequest) {
 - **Documentation**: https://ai.google.dev/gemini-api/docs/image-generation
 - **Google AI Studio**: https://aistudio.google.com
 - **Prompt Guide**: https://ai.google.dev/gemini-api/docs/prompting-intro
+

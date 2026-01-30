@@ -1,4 +1,4 @@
----
+﻿---
 name: copilot-docs
 description: Configure GitHub Copilot with custom instructions. Use when setting up .github/copilot-instructions.md, customizing Copilot behavior, or creating repository-specific AI guidance. Triggers on Copilot instructions, copilot-instructions.md, GitHub Copilot config.
 ---
@@ -145,3 +145,4 @@ The file must be at `.github/copilot-instructions.md` (not in root).
 
 - **GitHub Docs**: https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot
 - **VS Code Copilot**: https://code.visualstudio.com/docs/copilot/copilot-customization
+

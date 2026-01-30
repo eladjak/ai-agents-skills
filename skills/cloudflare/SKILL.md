@@ -1,4 +1,4 @@
----
+﻿---
 name: cloudflare
 description: Build and deploy on Cloudflare's edge platform. Use when creating Workers, Pages, D1 databases, R2 storage, AI inference, or KV storage. Triggers on Cloudflare, Workers, Cloudflare Pages, D1, R2, KV, Cloudflare AI, Durable Objects, edge computing.
 ---
@@ -528,3 +528,4 @@ export default {
 - **Pages Docs**: https://developers.cloudflare.com/pages/
 - **AI Docs**: https://developers.cloudflare.com/workers-ai/
 - **Wrangler CLI**: https://developers.cloudflare.com/workers/wrangler/
+

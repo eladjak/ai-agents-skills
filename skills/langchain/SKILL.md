@@ -1,4 +1,4 @@
----
+﻿---
 name: langchain
 description: Build LLM applications with LangChain and LangGraph. Use when creating RAG pipelines, agent workflows, chains, or complex LLM orchestration. Triggers on LangChain, LangGraph, LCEL, RAG, retrieval, agent chain.
 ---
@@ -202,3 +202,4 @@ chain.invoke({"topic": "AI"})
 - **LangSmith**: https://smith.langchain.com/
 - **LangChain Hub**: https://smith.langchain.com/hub
 - **LangChain Templates**: https://github.com/langchain-ai/langchain/tree/master/templates
+

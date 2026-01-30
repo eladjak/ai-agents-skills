@@ -1,4 +1,4 @@
----
+﻿---
 name: github-trending
 description: Fetch and display GitHub trending repositories and developers. Use when building dashboards showing trending repos, discovering popular projects, or tracking GitHub trends. Triggers on GitHub trending, trending repos, popular repositories, GitHub discover.
 ---
@@ -296,3 +296,4 @@ function useTrending(options: { language?: string; since?: string } = {}) {
 
 - **GitHub Trending Page**: https://github.com/trending
 - **GitHub Search API**: https://docs.github.com/en/rest/search
+

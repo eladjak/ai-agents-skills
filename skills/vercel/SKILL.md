@@ -1,4 +1,4 @@
----
+﻿---
 name: vercel
 description: Deploy and configure applications on Vercel. Use when deploying Next.js apps, configuring serverless functions, setting up edge functions, or managing Vercel projects. Triggers on Vercel, deploy, serverless, edge function, Next.js deployment.
 ---
@@ -202,3 +202,4 @@ export default function handler(req, res) {
 
 - **Vercel Docs**: https://vercel.com/docs
 - **Next.js on Vercel**: https://vercel.com/docs/frameworks/nextjs
+

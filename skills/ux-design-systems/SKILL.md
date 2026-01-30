@@ -1,4 +1,4 @@
----
+﻿---
 name: ux-design-systems
 description: Build consistent design systems with tokens, components, and theming. Use when creating component libraries, implementing design tokens, building theme systems, or ensuring design consistency. Triggers on design system, design tokens, component library, theming, dark mode.
 ---
@@ -189,3 +189,4 @@ export const useTheme = () => useContext(ThemeContext);
 
 - **Tailwind CSS**: https://tailwindcss.com
 - **CVA (Class Variance Authority)**: https://cva.style
+

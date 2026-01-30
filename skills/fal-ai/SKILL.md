@@ -1,4 +1,4 @@
----
+﻿---
 name: fal-ai
 description: Generate images, videos, and audio with fal.ai serverless AI. Use when building AI image generation, video generation, image editing, or real-time AI features. Triggers on fal.ai, fal, AI image generation, Flux, SDXL, real-time AI, serverless AI.
 ---
@@ -351,3 +351,4 @@ await fal.queue.submit('fal-ai/flux/dev', {
 - **Model Gallery**: https://fal.ai/models
 - **API Reference**: https://fal.ai/docs/api-reference
 - **Pricing**: https://fal.ai/pricing
+

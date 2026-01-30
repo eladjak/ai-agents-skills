@@ -1,4 +1,4 @@
----
+﻿---
 name: owasp-security
 description: Implement secure coding practices following OWASP Top 10. Use when preventing security vulnerabilities, implementing authentication, securing APIs, or conducting security reviews. Triggers on OWASP, security, XSS, SQL injection, CSRF, authentication security, secure coding, vulnerability.
 ---
@@ -534,3 +534,4 @@ app.post('/api/fetch-url', async (req, res) => {
 - **OWASP Cheat Sheets**: https://cheatsheetseries.owasp.org/
 - **Node.js Security**: https://nodejs.org/en/docs/guides/security/
 - **Snyk**: https://snyk.io/
+

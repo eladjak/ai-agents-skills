@@ -1,4 +1,4 @@
----
+﻿---
 name: figma
 description: Integrate with Figma API for design automation and code generation. Use when extracting design tokens, generating React/CSS code from Figma components, syncing design systems, building Figma plugins, or automating design-to-code workflows. Triggers on Figma API, design tokens, Figma plugin, design-to-code, Figma export, Figma component, Dev Mode.
 ---
@@ -647,3 +647,4 @@ function nodeToJSON(node: SceneNode) {
 - **Variables API**: https://www.figma.com/developers/api#variables
 - **Dev Mode**: https://www.figma.com/dev-mode/
 - **Figma Community Plugins**: https://www.figma.com/community/plugins
+

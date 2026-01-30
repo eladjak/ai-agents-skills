@@ -1,4 +1,4 @@
----
+﻿---
 name: bun
 description: Build fast applications with Bun JavaScript runtime. Use when creating Bun projects, using Bun APIs, bundling, testing, or optimizing Node.js alternatives. Triggers on Bun, Bun runtime, bun.sh, bunx, Bun serve, Bun test, JavaScript runtime.
 ---
@@ -532,3 +532,4 @@ sourcemap = "external"
 - **Bun API Reference**: https://bun.sh/docs/api
 - **Bun Discord**: https://bun.sh/discord
 - **GitHub**: https://github.com/oven-sh/bun
+

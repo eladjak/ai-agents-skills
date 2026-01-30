@@ -1,4 +1,4 @@
----
+﻿---
 name: railway
 description: Deploy applications on Railway platform. Use when deploying containerized apps, setting up databases, configuring private networking, or managing Railway projects. Triggers on Railway, railway.app, deploy container, Railway database.
 ---
@@ -198,3 +198,4 @@ healthcheckTimeout = 100
 
 - **Railway Docs**: https://docs.railway.app
 - **Railway CLI**: https://docs.railway.app/develop/cli
+

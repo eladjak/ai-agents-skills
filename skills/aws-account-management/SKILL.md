@@ -1,4 +1,4 @@
----
+﻿---
 name: aws-account-management
 description: Manage AWS accounts, organizations, IAM, and billing. Use when setting up AWS Organizations, managing IAM policies, controlling costs, or implementing multi-account strategies. Triggers on AWS Organizations, AWS IAM, AWS billing, Cost Explorer, SCPs, multi-account, AWS SSO, Identity Center.
 ---
@@ -612,3 +612,4 @@ resource "aws_iam_role" "terraform_role" {
 - **Cost Management**: https://docs.aws.amazon.com/cost-management/
 - **Control Tower**: https://docs.aws.amazon.com/controltower/
 - **Security Hub**: https://docs.aws.amazon.com/securityhub/
+

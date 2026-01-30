@@ -1,4 +1,4 @@
----
+﻿---
 name: mongodb
 description: Work with MongoDB databases using best practices. Use when designing schemas, writing queries, building aggregation pipelines, or optimizing performance. Triggers on MongoDB, Mongoose, NoSQL, aggregation pipeline, document database, MongoDB Atlas.
 ---
@@ -570,3 +570,4 @@ const results = await Product.aggregate([
 - **Mongoose Docs**: https://mongoosejs.com/docs/
 - **MongoDB University**: https://learn.mongodb.com/
 - **Atlas Docs**: https://www.mongodb.com/docs/atlas/
+

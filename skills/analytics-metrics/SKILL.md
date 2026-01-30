@@ -1,4 +1,4 @@
----
+﻿---
 name: analytics-metrics
 description: Build data visualization and analytics dashboards. Use when creating charts, KPI displays, metrics dashboards, or data visualization components. Triggers on analytics, dashboard, charts, metrics, KPI, data visualization, Recharts.
 ---
@@ -234,3 +234,4 @@ export function formatPercent(value: number): string {
 
 - **Recharts**: https://recharts.org
 - **D3.js**: https://d3js.org
+

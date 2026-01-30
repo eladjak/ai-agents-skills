@@ -1,4 +1,4 @@
----
+﻿---
 name: aws-strands
 description: Build AI agents with Strands Agents SDK. Use when developing model-agnostic agents, implementing ReAct patterns, creating multi-agent systems, or building production agents on AWS. Triggers on Strands, Strands SDK, model-agnostic agent, ReAct agent.
 ---
@@ -253,3 +253,4 @@ cd amazon-bedrock-agentcore-samples/02-use-cases/A2A-multi-agent-incident-respon
 - **Official Samples**: https://github.com/awslabs/amazon-bedrock-agentcore-samples
 - **A2A Use Case**: https://github.com/awslabs/amazon-bedrock-agentcore-samples/tree/main/02-use-cases/A2A-multi-agent-incident-response
 - **Integrations**: https://github.com/awslabs/amazon-bedrock-agentcore-samples/tree/main/03-integrations
+

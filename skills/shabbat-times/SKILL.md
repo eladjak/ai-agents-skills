@@ -1,4 +1,4 @@
----
+﻿---
 name: shabbat-times
 description: Access Jewish calendar data and Shabbat times via Hebcal API. Use when building apps with Shabbat times, Jewish holidays, Hebrew dates, or Zmanim. Triggers on Shabbat times, Hebcal, Jewish calendar, Hebrew date, Zmanim.
 ---
@@ -163,3 +163,4 @@ function useShabbatTimes(geonameid: string) {
 ## Resources
 
 - **Hebcal API Docs**: https://www.hebcal.com/home/developer-apis
+

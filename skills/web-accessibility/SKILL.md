@@ -1,4 +1,4 @@
----
+﻿---
 name: web-accessibility
 description: Build accessible web applications following WCAG guidelines. Use when implementing ARIA patterns, keyboard navigation, screen reader support, or ensuring accessibility compliance. Triggers on accessibility, a11y, WCAG, ARIA, screen reader, keyboard navigation.
 ---
@@ -215,3 +215,4 @@ test('component is accessible', async () => {
 
 - **WCAG 2.1 Guidelines**: https://www.w3.org/WAI/WCAG21/quickref/
 - **ARIA Authoring Practices**: https://www.w3.org/WAI/ARIA/apg/
+

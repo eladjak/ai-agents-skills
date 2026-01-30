@@ -1,4 +1,4 @@
----
+﻿---
 name: aws-agentcore
 description: Build AI agents with AWS Bedrock AgentCore. Use when developing agents on AWS infrastructure, creating tool-use patterns, implementing agent orchestration, or integrating with Bedrock models. Triggers on keywords like AgentCore, Bedrock Agent, AWS agent, Lambda tools.
 ---
@@ -204,3 +204,4 @@ cd amazon-bedrock-agentcore-samples/02-use-cases/customer-support-assistant
 - **Official Samples**: https://github.com/awslabs/amazon-bedrock-agentcore-samples
 - **Use Cases**: https://github.com/awslabs/amazon-bedrock-agentcore-samples/tree/main/02-use-cases
 - **Tutorials**: https://github.com/awslabs/amazon-bedrock-agentcore-samples/tree/main/01-tutorials
+

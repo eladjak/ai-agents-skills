@@ -1,4 +1,4 @@
----
+﻿---
 name: mermaid-diagrams
 description: Create diagrams and visualizations using Mermaid syntax. Use when generating flowcharts, sequence diagrams, class diagrams, entity-relationship diagrams, Gantt charts, or any visual documentation. Triggers on Mermaid, flowchart, sequence diagram, class diagram, ER diagram, Gantt chart, diagram, visualization.
 ---
@@ -371,3 +371,4 @@ export function Mermaid({ chart, id = 'mermaid-diagram' }: MermaidProps) {
 - **Mermaid Docs**: https://mermaid.js.org/
 - **Live Editor**: https://mermaid.live
 - **GitHub Support**: Mermaid works natively in GitHub markdown
+

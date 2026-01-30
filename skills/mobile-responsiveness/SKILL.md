@@ -1,4 +1,4 @@
----
+﻿---
 name: mobile-responsiveness
 description: Build responsive, mobile-first web applications. Use when implementing responsive layouts, touch interactions, mobile navigation, or optimizing for various screen sizes. Triggers on responsive design, mobile-first, breakpoints, touch events, viewport.
 ---
@@ -233,3 +233,4 @@ function Component() {
 - **Responsive Design**: https://web.dev/learn/design/
 - **Mobile-First CSS**: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design
 - **Viewport Units**: https://developer.mozilla.org/en-US/docs/Web/CSS/length#viewport-percentage_lengths
+

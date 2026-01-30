@@ -1,4 +1,4 @@
----
+﻿---
 name: local-llm-router
 description: Route AI coding queries to local LLMs in air-gapped networks. Integrates Serena MCP for semantic code understanding. Use when working offline, with local models (Ollama, LM Studio, Jan, OpenWebUI), or in secure/closed environments. Triggers on local LLM, Ollama, LM Studio, Jan, air-gapped, offline AI, Serena, local inference, closed network, model routing, defense network, secure coding.
 ---
@@ -2533,3 +2533,4 @@ def parse_code_edits(response: str) -> list:
 - **Jan AI**: https://jan.ai/docs/desktop/api-server
 - **OpenWebUI**: https://docs.openwebui.com/
 - **LocalAI**: https://localai.io/basics/getting_started/
+
