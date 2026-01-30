@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/AI-Agent%20Skills-blueviolet?style=for-the-badge&logo=robot&logoColor=white" alt="AI Agent Skills"/>
-  <img src="https://img.shields.io/badge/Skills-110-green?style=for-the-badge" alt="Skills Count"/>
+  <img src="https://img.shields.io/badge/Skills-111-green?style=for-the-badge" alt="Skills Count"/>
 </p>
 
 <p align="center">
@@ -33,39 +33,39 @@ powershell -File ~/.claude/skills/skill-sync/sync.ps1 check
 1. ׳©׳›׳₪׳ ׳׳× ׳”׳׳׳’׳¨: `gh repo clone hoodini/ai-agents-skills`
 2. ׳”׳¢׳×׳§ ׳׳™׳•׳׳ ׳•׳™׳•׳× ׳-`~/.claude/skills/`
 
-## ׳׳™׳•׳׳ ׳•׳™׳•׳× ׳–׳׳™׳ ׳•׳× (110 ׳¡׳”"׳›)
+## ׳׳™׳•׳׳ ׳•׳™׳•׳× ׳–׳׳™׳ ׳•׳× (111 ׳¡׳”"׳›)
 
 | ׳׳™׳•׳׳ ׳•׳× | ׳×׳™׳׳•׳¨ |
 |---------|-------|
-| nano-banana-poster | "Generate images and posters with Google Gemini. Use for: create image, generate visual, AI image... |
 | nano-banana-pro | Generate images with Google's Nano Banana Pro (Gemini 3 Pro Image). Use when generating AI images... |
 | owasp-security | Implement secure coding practices following OWASP Top 10. Use when preventing security vulnerabil... |
-| mermaid-diagrams | Create diagrams and visualizations using Mermaid syntax. Use when generating flowcharts, sequence... |
+| planning-patterns | "Internal skill. Use cc10x-router for all development tasks." |
 | mobile-responsiveness | Build responsive, mobile-first web applications. Use when implementing responsive layouts, touch ... |
 | mongodb | Work with MongoDB databases using best practices. Use when designing schemas, writing queries, bu... |
-| planning-patterns | "Internal skill. Use cc10x-router for all development tasks." |
-| railway | Deploy applications on Railway platform. Use when deploying containerized apps, setting up databa... |
+| nano-banana-poster | "Generate images and posters with Google Gemini. Use for: create image, generate visual, AI image... |
+| postgres-patterns | PostgreSQL database patterns for query optimization, schema design, indexing, and security. Based... |
 | react-best-practices | React and Next.js performance optimization guidelines from Vercel Engineering. This skill should ... |
 | react-native-callstack | Provides React Native performance optimization guidelines for FPS, TTI, bundle size, memory leaks... |
-| postgres-patterns | PostgreSQL database patterns for query optimization, schema design, indexing, and security. Based... |
-| presentation-architect | "Transform high-level ideas or briefs into fully structured presentation scripts saved as Markdow... |
-| r3f-best-practices | React Three Fiber (R3F) and Poimandres ecosystem best practices. Use when writing, reviewing, or ... |
-| mcp-discovery |  |
-| golang-patterns | Idiomatic Go patterns, best practices, and conventions for building robust, efficient, and mainta... |
-| golang-testing | Go testing patterns including table-driven tests, subtests, benchmarks, fuzzing, and test coverag... |
-| honest-agent | Configure AI coding agents to be honest, objective, and non-sycophantic. Use when the user wants ... |
-| github-research | "Internal skill. Use cc10x-router for all development tasks." |
-| github-trending | Fetch and display GitHub trending repositories and developers. Use when building dashboards showi... |
-| github-workflows | GitHub patterns for PRs, code review, branching, and repository management. Use when working with... |
-| html-to-pdf | Convert HTML to PDF with pixel-perfect rendering and excellent Hebrew/RTL support. Use when the u... |
-| langchain | Build LLM applications with LangChain and LangGraph. Use when creating RAG pipelines, agent workf... |
-| local-llm-router | Route AI coding queries to local LLMs in air-gapped networks. Integrates Serena MCP for semantic ... |
-| lsp-integration |  |
-| html-to-pptx | "Convert HTML to PowerPoint (PPTX) with excellent Hebrew/RTL support. Use when the user asks to '... |
-| iterative-retrieval | Pattern for progressively refining context retrieval to solve the subagent context problem |
-| kinetic-video-creator |  |
 | react-native-skills | React Native and Expo best practices for building performant mobile apps. Use
   when building Rea... |
+| presentation-architect | "Transform high-level ideas or briefs into fully structured presentation scripts saved as Markdow... |
+| r3f-best-practices | React Three Fiber (R3F) and Poimandres ecosystem best practices. Use when writing, reviewing, or ... |
+| railway | Deploy applications on Railway platform. Use when deploying containerized apps, setting up databa... |
+| mermaid-diagrams | Create diagrams and visualizations using Mermaid syntax. Use when generating flowcharts, sequence... |
+| golang-testing | Go testing patterns including table-driven tests, subtests, benchmarks, fuzzing, and test coverag... |
+| honest-agent | Configure AI coding agents to be honest, objective, and non-sycophantic. Use when the user wants ... |
+| html-to-pdf | Convert HTML to PDF with pixel-perfect rendering and excellent Hebrew/RTL support. Use when the u... |
+| github-trending | Fetch and display GitHub trending repositories and developers. Use when building dashboards showi... |
+| github-workflows | GitHub patterns for PRs, code review, branching, and repository management. Use when working with... |
+| golang-patterns | Idiomatic Go patterns, best practices, and conventions for building robust, efficient, and mainta... |
+| html-to-pptx | "Convert HTML to PowerPoint (PPTX) with excellent Hebrew/RTL support. Use when the user asks to '... |
+| local-llm-router | Route AI coding queries to local LLMs in air-gapped networks. Integrates Serena MCP for semantic ... |
+| lsp-integration |  |
+| mcp-discovery |  |
+| iterative-retrieval | Pattern for progressively refining context retrieval to solve the subagent context problem |
+| kinetic-video-creator |  |
+| langchain | Build LLM applications with LangChain and LangGraph. Use when creating RAG pipelines, agent workf... |
+| receiving-code-review | Use when receiving code review feedback, before implementing suggestions, especially if feedback ... |
 | ux-design-systems | Build consistent design systems with tokens, components, and theming. Use when creating component... |
 | vercel | Deploy and configure applications on Vercel. Use when deploying Next.js apps, configuring serverl... |
 | vercel-react-best-practices | React and Next.js performance optimization guidelines from Vercel Engineering. This skill should ... |
@@ -83,8 +83,8 @@ powershell -File ~/.claude/skills/skill-sync/sync.ps1 check
 | session-memory | "Internal skill. Use cc10x-router for all development tasks." |
 | shabbat-times | Access Jewish calendar data and Shabbat times via Hebcal API. Use when building apps with Shabbat... |
 | skill-sync | Sync skills from the ai-agents-skills GitHub repository. Use when you want to update skills, chec... |
-| receiving-code-review | Use when receiving code review feedback, before implementing suggestions, especially if feedback ... |
 | requesting-code-review | Use when completing tasks, implementing major features, or before merging to verify work meets re... |
+| sage | SAGE - Smart Autonomous Growth Engine. Your personal AI companion for skill management, self-impr... |
 | semantic-code-understanding |  |
 | speech-generator | "Generate speech audio from text using ElevenLabs TTS. Use when user asks to 'send voice', 'send ... |
 | test-driven-development | "Internal skill. Use cc10x-router for all development tasks." |
@@ -93,6 +93,7 @@ powershell -File ~/.claude/skills/skill-sync/sync.ps1 check
 | strategic-compact | Suggests manual context compaction at logical intervals to preserve context through task phases r... |
 | subagent-driven-development | Use when executing implementation plans with independent tasks in the current session |
 | systematic-debugging | Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes |
+| github-research | "Internal skill. Use cc10x-router for all development tasks." |
 | cc10x-router | |
   THE ONLY ENTRY POINT FOR CC10X - AUTO-LOAD AND EXECUTE for ANY development task.
 
@@ -192,6 +193,6 @@ MIT - ׳ ׳•׳¦׳¨ ׳¢׳ ׳™׳“׳™ ׳™׳•׳‘׳ ׳׳‘׳
 
 ---
 
-*׳¢׳“׳›׳•׳ ׳׳—׳¨׳•׳: 2026-01-30 15:05:02*
+*׳¢׳“׳›׳•׳ ׳׳—׳¨׳•׳: 2026-01-30 15:24:54*
 
 </div>
