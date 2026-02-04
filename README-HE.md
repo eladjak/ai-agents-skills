@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/AI-Agent%20Skills-blueviolet?style=for-the-badge&logo=robot&logoColor=white" alt="AI Agent Skills"/>
-  <img src="https://img.shields.io/badge/Skills-118-green?style=for-the-badge" alt="Skills Count"/>
+  <img src="https://img.shields.io/badge/Skills-120-green?style=for-the-badge" alt="Skills Count"/>
 </p>
 
 <p align="center">
@@ -160,6 +160,8 @@ powershell -File ~/.claude/skills/skill-sync/sync.ps1 check
 | Convex Security Check | Quick security audit checklist covering authentication, function exposure, argument validation, r... |
 | copilot-docs | Configure GitHub Copilot with custom instructions. Use when setting up .github/copilot-instructio... |
 | copilot-sdk | Build agentic applications with GitHub Copilot SDK. Use when embedding AI agents in apps, creatin... |
+| eigent-integration | Desktop multi-agent AI for privacy-sensitive local workflows. Use when needing local AI, multi-agent... |
+| planning-with-files | Persistent markdown-based planning for complex multi-step tasks. Use when starting complex projects... |
 
 
 ## ׳׳‘׳ ׳” ׳׳™׳•׳׳ ׳•׳×
