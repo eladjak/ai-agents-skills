@@ -1,50 +1,191 @@
 # Kinetic Video Creator Skill
 
-Automated kinetic typography video creation system using Remotion, ElevenLabs TTS, and music generation.
+Automated kinetic typography video creation system. Supports **two pipelines**:
+1. **Remotion** (Node.js) - complex compositions with React
+2. **Pillow + FFmpeg** (Python) - lightweight, no Remotion dependency, great for Hebrew/RTL
 
 ## What This Skill Does
 
-Creates professional kinetic typography videos from a simple topic/idea:
+Creates professional kinetic typography videos from a script:
 
-1. ✅ Writes emotionally-crafted scripts with bracket directions
-2. ✅ Generates speech with ElevenLabs TTS
-3. ✅ Creates matching background music (exact duration)
-4. ✅ Transcribes audio for word-level timing
-5. ✅ Builds Remotion composition with animations
-6. ✅ Renders final video
-7. ✅ Optionally uploads to YouTube
+1. Writes emotionally-crafted scripts with bracket directions
+2. Generates speech with ElevenLabs TTS
+3. Creates matching background music (exact duration)
+4. Transcribes audio for word-level timing
+5. **Proofreads transcript** (mandatory for non-English)
+6. Builds scene-based composition with animations
+7. Renders final video
+8. Optionally uploads to YouTube
+
+## Pipelines
+
+### Pipeline A: Pillow + FFmpeg (Recommended for Hebrew/RTL)
+
+No Remotion needed. Python renders PNG frames with Pillow, FFmpeg composites to MP4.
+
+**Prerequisites:**
+```bash
+pip install Pillow python-bidi
+# FFmpeg must be installed
+```
+
+**Advantages:**
+- No Node.js/React dependency
+- Native Hebrew/RTL support via `python-bidi`
+- Scene-based layouts with different visual treatments
+- Full control over frame rendering
+- Works on any OS with Python + FFmpeg
+
+**Render command:**
+```bash
+python render_kinetic_video.py
+```
+
+### Pipeline B: Remotion (React-based)
+
+For complex compositions with React animations.
+
+**Prerequisites:**
+```bash
+npm install remotion @remotion/cli @remotion/player
+```
+
+## CRITICAL: Hebrew/RTL Workflow
+
+### 1. TTS Script: Spell Out Numbers in Words
+```
+# BAD - TTS will struggle with digits:
+חיסכון של 87 שעות
+
+# GOOD - spell out for natural speech:
+חיסכון של שמונים ושבע שעות
+```
+
+### 2. Video Display: Show Numbers as Digits
+Even though audio says "שמונים ושבע", the video should display "87" on screen.
+
+Use a `DISPLAY_TEXT_MAP` in the render script:
+```python
+DISPLAY_TEXT_MAP = {
+    "87": "87",
+    "57,550": "57,550",
+    "חמישה": "5",
+    "24": "24",
+    "7-10": "7-10",
+}
+```
+
+### 3. Whisper Transcription is UNRELIABLE for Hebrew
+**ALWAYS manually correct the transcript before rendering!**
+
+Common Whisper Hebrew errors found:
+| Whisper Output | Correct Text |
+|----------------|-------------|
+| מרוקז | מרוכז |
+| קשרים לקוחות | קשר עם לקוחות |
+| גילסה | גרסה |
+| בדשבורד | בדאשבורד |
+| Hallucinated endings | Remove extra text |
+
+**Mandatory workflow:**
+1. Run Whisper/faster-whisper for word timing
+2. Create `transcript_corrected.json` with **known script text** + Whisper timing
+3. Proofread every word against the original script
+4. Only then render the video
+
+### 4. ElevenLabs for Hebrew: Use v3 Model
+```javascript
+model_id: 'eleven_v3'  // NOT eleven_multilingual_v2
+// v3 has explicit Hebrew support (74 languages)
+// v2 only has 29 languages, no explicit Hebrew
+```
+
+### 5. Hebrew API Calls: Use Node.js, Not curl
+```javascript
+// BAD - curl corrupts UTF-8 Hebrew:
+// curl -X POST ... -d '{"text": "שלום"}'
+
+// GOOD - Node.js https module with proper encoding:
+const body = JSON.stringify({ text: hebrewText });
+const options = {
+  headers: {
+    'Content-Length': Buffer.byteLength(body), // UTF-8 byte length!
+  }
+};
+```
+
+## Scene-Based Layouts (Pillow Pipeline)
+
+The Pillow pipeline supports scene-based video composition where different segments get unique visual treatments:
+
+| Layout | Description | Best For |
+|--------|-------------|----------|
+| `centered_large` | Big centered text | Opening/intro |
+| `centered` | Standard centered text | Descriptions |
+| `big_number` | Hero number + subtitle | Statistics, KPIs |
+| `agents_grid` | Grid of agent cards | Team/capability overview |
+| `capabilities_list` | Animated bullet list | Feature lists |
+| `framed_center` | Decorative framed text | Key statements |
+| `cta_pulse` | Pulsing call-to-action | CTA sections |
+| `logo_closing` | Brand logo + tagline | Closing |
+
+## Animation Types
+
+| Animation | Description |
+|-----------|-------------|
+| Typewriter | Words appear one by one synced to audio |
+| Scale-up | Text scales from 0 to full size |
+| Crossfade | Smooth scene transitions |
+| Progress bar | Timeline indicator at bottom |
+| Vignette | Dark edges for cinematic look |
+| Accent lines | Decorative lines synced to scenes |
+
+## Transcript JSON Format
+
+```json
+{
+  "language": "he",
+  "duration": 52.5,
+  "text": "Full text here",
+  "words": [
+    {"word": "שלום,", "start": 0.0, "end": 0.44},
+    {"word": "87", "start": 10.18, "end": 10.74}
+  ]
+}
+```
+
+**Important:** For display, numbers should be digits ("87") even if the original Whisper output was Hebrew words. The `display_text` field or `DISPLAY_TEXT_MAP` handles this mapping.
 
 ## Prerequisites
 
 ### Required Skills
-These skills must be installed first:
 ```bash
-# Remotion skill
-npx @anthropic-ai/claude-code skill add remotion-dev/skills/remotion-best-practices
-
-# Aviz Skills Library
+# Speech generator
 npx @anthropic-ai/claude-code skill add aviz85/claude-skills-library/skills/speech-generator
-npx @anthropic-ai/claude-code skill add aviz85/claude-skills-library/skills/music-generator
 npx @anthropic-ai/claude-code skill add aviz85/claude-skills-library/skills/transcribe
-npx @anthropic-ai/claude-code skill add aviz85/claude-skills-library/skills/youtube-uploader
-```
-
-**IMPORTANT:** After installing skills, restart Claude Code!
-
-### Required Dependencies
-```bash
-# Remotion
-npm install remotion @remotion/cli @remotion/player
-
-# FFmpeg (for audio mixing)
-# macOS: brew install ffmpeg
-# Ubuntu: sudo apt install ffmpeg
+npx @anthropic-ai/claude-code skill add aviz85/claude-skills-library/skills/music-generator
 ```
 
 ### Environment Variables
-Create `.env` file:
 ```
-ELEVENLABS_API_KEY=sk_3eb9c9aa286373eca54903fc91d399f28848240fb17d4d91
+ELEVENLABS_API_KEY=<your-key>
+```
+
+### Python Dependencies (Pillow Pipeline)
+```bash
+pip install Pillow python-bidi
+```
+
+### FFmpeg
+```bash
+# Windows: download from ffmpeg.org or use chocolatey
+choco install ffmpeg
+
+# macOS:
+brew install ffmpeg
+
+# Ubuntu:
+sudo apt install ffmpeg
 ```
 
 ## Script Writing Guidelines
@@ -55,199 +196,94 @@ Write scripts with emotional bracket directions:
 [dramatic pause] The future isn't coming.
 [slowly, with weight] It's already here.
 [building intensity] Every day, every decision...
-[powerful, emphatic] ...shapes the world we'll live in.
-[warm, inspiring] And you? You're part of it.
 ```
-
-### Supported Directions
-- **Pacing**: [pause], [long pause], [slowly], [faster]
-- **Tone**: [whisper], [emphatic], [warm], [dramatic]
-- **Dynamic**: [building], [descending], [with weight]
 
 ### Word Count Guide
 - 30 sec = 60-80 words
 - 60 sec = 120-150 words
 - 90 sec = 180-220 words
 
-## Workflow Steps
+## Complete Workflow
 
-### 1. Script Writing
-Ask Claude to write an emotional script:
-```
-"Write a 60-second kinetic video script about [topic]"
-```
+### 1. Write Script
+Two versions:
+- **TTS script**: Numbers spelled out in words (for natural speech)
+- **Display script**: Numbers as digits (for video display)
 
-### 2. Speech Generation
-Use the speech-generator skill:
-```
-"Generate speech from script.txt and save to speech.mp3"
-```
+### 2. Generate Speech
+Use speech-generator skill with `eleven_v3` model for Hebrew.
 
-### 3. Transcription
-Use the transcribe skill for word-level timing:
-```
-"Transcribe speech.mp3 with word-level timing to transcript.json"
-```
+### 3. Transcribe
+Use faster-whisper for word-level timing. **Output needs correction!**
 
-### 4. Music Generation
-Use the music-generator skill (specify exact duration from transcription):
-```
-"Generate 87 seconds of inspirational cinematic music"
-```
+### 4. Proofread Transcript (MANDATORY)
+Compare Whisper output against known script. Fix:
+- Misspelled Hebrew words
+- Missing words
+- Hallucinated extra text
+- Replace spelled-out numbers with digit versions for display
 
-### 5. Audio Mixing
-Mix speech + music with FFmpeg:
+### 5. Generate Music
+Match exact duration from transcription.
+
+### 6. Mix Audio
 ```bash
 ffmpeg -y \
-  -i speech.mp3 \
-  -i music.mp3 \
+  -i speech.mp3 -i music.mp3 \
   -filter_complex "[0:a]volume=1.0[speech];[1:a]volume=0.17[music];[speech][music]amix=inputs=2:duration=first[out]" \
   -map "[out]" -c:a libmp3lame -q:a 2 \
   final_audio.mp3
 ```
 
-### 6. Remotion Composition
-Create composition using template:
-```tsx
-import { MultiWordComposition } from '../templates/MultiWordComposition';
-import transcriptData from '../projects/my-video/transcript.json';
-
-export const MyKineticVideo: React.FC = () => {
-  const WORD_TIMINGS = transcriptData.words.map(w => ({
-    word: w.word,
-    start: w.start,
-    end: w.end,
-  }));
-
-  return (
-    <MultiWordComposition
-      wordTimings={WORD_TIMINGS}
-      audioFile="../projects/my-video/final_audio.mp3"
-      mode="wordCloud"
-      heroFontSize={180}
-      strongFontSize={120}
-      normalFontSize={80}
-      glowIntensity={1.5}
-      dustEnabled={true}
-      lightBeamsEnabled={true}
-      colorScheme={3}
-    />
-  );
-};
+### 7. Render Frames (Pillow)
+```bash
+python render_kinetic_video.py
+# Renders ~1575 PNG frames at 30fps for 52.5s video
 ```
 
-### 7. Render Video
-Use remotion-render skill:
-```
-"Render the MyKineticVideo composition to output.mp4"
-```
-
-### 8. Upload (Optional)
-Use youtube-uploader skill:
-```
-"Upload output.mp4 to YouTube with title 'My Kinetic Video'"
-```
-
-## Animation Modes
-
-### Word Cloud (default)
-- Multiple words appear together
-- Grouped by timing gaps
-- Best for: Fast-paced, dynamic content
-
-### Single Word
-- One word at a time, centered
-- Best for: Dramatic, impactful statements
-
-## Visual Customization
-
-Available props:
-- `heroFontSize`: Size for emphasis words (default: 180)
-- `strongFontSize`: Size for important words (default: 120)
-- `normalFontSize`: Size for regular words (default: 80)
-- `glowIntensity`: 0-3, glow around text (default: 1.5)
-- `dustEnabled`: Particle effects (default: true)
-- `lightBeamsEnabled`: Light beam animations (default: true)
-- `colorScheme`: 0-7, predefined color palettes (default: 3)
-
-## Example Usage
-
-### Quick Mode
-```
-"Create a kinetic video about the importance of persistence in achieving goals"
-```
-
-Claude will:
-1. Write an emotional script
-2. Generate speech
-3. Create music
-4. Transcribe timing
-5. Build composition
-6. Render video
-
-### Manual Mode
-For more control:
-```
-1. "Write a 90-second script about overcoming fear"
-2. "Generate speech from script.txt"
-3. "Transcribe speech.mp3"
-4. "Generate 93 seconds of dramatic cinematic music"
-5. "Mix audio files: speech.mp3 + music.mp3 → final_audio.mp3"
-6. "Create Remotion composition with word cloud mode"
-7. "Render MyKineticVideo composition"
+### 8. Composite with FFmpeg
+```bash
+ffmpeg -y -framerate 30 \
+  -i frames/frame_%05d.png \
+  -i final_audio.mp3 \
+  -c:v libx264 -preset medium -crf 23 \
+  -c:a aac -b:a 192k \
+  -pix_fmt yuv420p -shortest \
+  output.mp4
 ```
 
 ## Troubleshooting
 
-### Skill Not Found
-```bash
-# Install missing skill
-npx @anthropic-ai/claude-code skill add aviz85/claude-skills-library/skills/[skill-name]
+### Hebrew Text Renders LTR
+Install `python-bidi` and wrap all Hebrew text: `get_display(text)`
 
-# Restart Claude Code
-exit # then re-enter project
-```
+### Numbers Sound Wrong in TTS
+Spell out numbers in Hebrew words in the TTS script:
+- 87 → שמונים ושבע
+- 57,550 → חמישים ושבעה אלף חמש מאות וחמישים
+- 24 → עשרים וארבע
+
+### Whisper Adds Hallucinated Text
+Whisper sometimes adds words not in the original audio (especially at end). Always trim `duration` in corrected transcript and remove extra words.
 
 ### FFmpeg Not Found
-```bash
-# macOS
-brew install ffmpeg
+Ensure FFmpeg is in PATH. On Windows, download from ffmpeg.org.
 
-# Ubuntu/Debian
-sudo apt install ffmpeg
-
-# Windows
-# Download from https://ffmpeg.org/download.html
-```
-
-### ElevenLabs API Issues
-- Check `.env` file has valid API key
-- Verify API key has credits remaining
-- Check network connectivity
-
-### Remotion Render Fails
-```bash
-# Check Remotion installation
-npm list remotion
-
-# Reinstall if needed
-npm install remotion @remotion/cli @remotion/player
-```
+### ElevenLabs UTF-8 Error (invalid_unicode)
+Never send Hebrew via curl. Use Node.js `https` module with `Buffer.byteLength(body)` for correct Content-Length.
 
 ## Resources
 
 - **Remotion**: https://www.remotion.dev/
-- **Remotion Skills**: https://skills.sh/remotion-dev/skills/remotion-best-practices
-- **Remotion Assistant**: https://aviz85.github.io/remotion-assistant/
 - **ElevenLabs**: https://elevenlabs.io/
-- **Aviz Skills**: https://github.com/aviz85/claude-skills-library
+- **python-bidi**: https://pypi.org/project/python-bidi/
+- **Pillow**: https://pillow.readthedocs.io/
 
 ## Credits
 
 Created by Elad Jacoby
-Based on Aviz85's Remotion Assistant and Claude Skills Library
-Powered by Claude Sonnet 4.5
+Powered by Claude Opus 4.6
 
 ---
 
-**Triggers**: kinetic video, kinetic typography, video creation, remotion, elevenlabs, tts video, animated text, speech to video
+**Triggers**: kinetic video, kinetic typography, video creation, remotion, elevenlabs, tts video, animated text, speech to video, pillow video, ffmpeg video, hebrew video
