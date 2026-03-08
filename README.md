@@ -1,6 +1,6 @@
 ﻿<p align="center">
   <img src="https://img.shields.io/badge/AI-Agent%20Skills-blueviolet?style=for-the-badge&logo=robot&logoColor=white" alt="AI Agent Skills"/>
-  <img src="https://img.shields.io/badge/Skills-120-green?style=for-the-badge" alt="Skills Count"/>
+  <img src="https://img.shields.io/badge/Skills-212+-green?style=for-the-badge" alt="Skills Count"/>
 </p>
 
 <p align="center">
@@ -31,7 +31,21 @@ powershell -File ~/.claude/skills/skill-sync/sync.ps1 check
 1. Clone this repository: `gh repo clone hoodini/ai-agents-skills`
 2. Copy desired skills to `~/.claude/skills/`
 
-## Available Skills (118 total)
+## Israeli Skills Library (92 skills) - NEW!
+
+Full Israeli market skills from [Skills IL](https://agentskills.co.il). See [skills/israeli-skills-library/README.md](skills/israeli-skills-library/README.md) for full details.
+
+Categories: Tax & Finance (23), Government Services (16), Localization (15), Developer Tools (13), Marketing & Growth (9), Communication (7), Security & Compliance (7), Health Services (5), Food & Dining (4), Legal Tech (3), Education (3).
+
+```bash
+# Install all Israeli skills
+npx skills-il add skills-il/tax-and-finance --all -g
+npx skills-il add skills-il/localization --all -g
+npx skills-il add skills-il/government-services --all -g
+# ... see full list in israeli-skills-library/README.md
+```
+
+## Available Skills (210+ total)
 
 | Skill | Description |
 |-------|-------------|
