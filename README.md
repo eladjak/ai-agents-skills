@@ -1,10 +1,21 @@
-﻿<p align="center">
+<p align="center">
+  <a href="README.md">English</a> | <a href="README.he.md">עברית</a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/AI-Agent%20Skills-blueviolet?style=for-the-badge&logo=robot&logoColor=white" alt="AI Agent Skills"/>
-  <img src="https://img.shields.io/badge/Skills-212+-green?style=for-the-badge" alt="Skills Count"/>
+  <img src="https://img.shields.io/badge/Skills-210+-green?style=for-the-badge" alt="Skills Count"/>
+  <img src="https://img.shields.io/github/stars/eladjak/ai-agents-skills?style=for-the-badge&logo=github&color=yellow" alt="GitHub Stars"/>
+  <img src="https://img.shields.io/github/license/eladjak/ai-agents-skills?style=for-the-badge" alt="License"/>
+  <img src="https://img.shields.io/github/last-commit/eladjak/ai-agents-skills?style=for-the-badge" alt="Last Commit"/>
 </p>
 
 <p align="center">
   <img src="hero-skills.jpg" alt="AI Agent Skills Hero"/>
+</p>
+
+<p align="center">
+  <b>If you find this useful, please <a href="https://github.com/eladjak/ai-agents-skills">⭐ star this repo</a>!</b>
 </p>
 
 # AI Agent Skills Repository
@@ -28,7 +39,7 @@ powershell -File ~/.claude/skills/skill-sync/sync.ps1 check
 
 ### Manual Installation
 
-1. Clone this repository: `gh repo clone hoodini/ai-agents-skills`
+1. Clone this repository: `gh repo clone eladjak/ai-agents-skills`
 2. Copy desired skills to `~/.claude/skills/`
 
 ## Israeli Skills Library (92 skills) - NEW!
@@ -78,8 +89,7 @@ npx skills-il add skills-il/government-services --all -g
 | html-to-pptx | "Convert HTML to PowerPoint (PPTX) with excellent Hebrew/RTL support. Use when the user asks to '... |
 | iterative-retrieval | Pattern for progressively refining context retrieval to solve the subagent context problem |
 | kinetic-video-creator |  |
-| react-native-skills | React Native and Expo best practices for building performant mobile apps. Use
-  when building Rea... |
+| react-native-skills | React Native and Expo best practices for building performant mobile apps. Use when building Rea... |
 | ux-design-systems | Build consistent design systems with tokens, components, and theming. Use when creating component... |
 | vercel | Deploy and configure applications on Vercel. Use when deploying Next.js apps, configuring serverl... |
 | vercel-react-best-practices | React and Next.js performance optimization guidelines from Vercel Engineering. This skill should ... |
@@ -87,10 +97,10 @@ npx skills-il add skills-il/government-services --all -g
 | ui-ux-pro-max |  |
 | upgrading-expo | Guidelines for upgrading Expo SDK versions and fixing dependency issues |
 | using-git-worktrees | Use when starting feature work that needs isolation from current workspace or before executing im... |
-| wordpress-publisher | "Publish posts to WordPress. Use for: publish blog post, upload to WordPress, ׳₪׳¨׳¡׳ ׳‘׳‘׳׳•׳’." |
+| wordpress-publisher | Publish posts to WordPress. Use for: publish blog post, upload to WordPress. |
 | writing-plans | Use when you have a spec or requirements for a multi-step task, before touching code |
 | writing-skills | Use when creating new skills, editing existing skills, or verifying skills work before deployment |
-| whatsapp | "WhatsApp automation using Green API. Use when the user wants to 'get group members', 'get phone ... |
+| whatsapp | WhatsApp automation using Green API. Use when the user wants to get group members, get phone numbers... |
 | verification-before-completion | "Internal skill. Use cc10x-router for all development tasks." |
 | web-accessibility | Build accessible web applications following WCAG guidelines. Use when implementing ARIA patterns,... |
 | web-design-guidelines | Review UI code for Web Interface Guidelines compliance. Use when asked to "review my UI", "check ... |
@@ -115,17 +125,13 @@ npx skills-il add skills-il/government-services --all -g
 | clickhouse-io | ClickHouse database patterns, query optimization, analytics, and data engineering best practices ... |
 | bun | Build fast applications with Bun JavaScript runtime. Use when creating Bun projects, using Bun AP... |
 | calendar | "Google Calendar integration via Apps Script API. Use when checking schedule, meetings, today's e... |
-| cc10x-router | |
-  THE ONLY ENTRY POINT FOR CC10X - AUTO-LOAD AND EXECUTE for ANY development task.
-
-  Trigge... |
+| cc10x-router | THE ONLY ENTRY POINT FOR CC10X - AUTO-LOAD AND EXECUTE for ANY development task. |
 | Convex Agents | Building AI agents with the Convex Agent component including thread management, tool integration,... |
 | Convex Best Practices | Guidelines for building production-ready Convex apps covering function organization, query patter... |
 | Convex Component Authoring | How to create, structure, and publish self-contained Convex components with proper isolation, exp... |
 | continuous-learning-v2 | Instinct-based learning system that observes sessions via hooks, creates atomic instincts with co... |
 | code-snippets | Reusable code snippets and patterns library. Use when you need common code patterns for TypeScrip... |
-| composition-patterns | React composition patterns that scale. Use when refactoring components with
-  boolean prop prolif... |
+| composition-patterns | React composition patterns that scale. Use when refactoring components with boolean prop prolif... |
 | continuous-learning | Automatically extract reusable patterns from Claude Code sessions and save them as learned skills... |
 | brainstorming | "Internal skill. Use cc10x-router for all development tasks." |
 | architecture-patterns | "Internal skill. Use cc10x-router for all development tasks." |
@@ -214,4 +220,4 @@ MIT - Created by Yuval Avidani
 
 ---
 
-*Last updated: 2026-01-30 16:09:06*
+*Last updated: 2026-04-12*
